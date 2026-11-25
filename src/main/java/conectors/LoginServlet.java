@@ -74,7 +74,6 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String user = request.getParameter("user");
-        System.out.println("El usuario es: "+user);
         HttpSession session = request.getSession(true);
         session.setAttribute("user", user);
         session.setMaxInactiveInterval(1800);
