@@ -64,7 +64,7 @@ public class ProfileServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
         String user = (session != null) ? (String) session.getAttribute("user") : null;
 
-//        response.setContentType("text/plain;charset=UTF-8");
+        response.setContentType("text/plain;charset=UTF-8");
         if (!"".equals(user)) {
 //            response.getWriter().write("Sesión activa para: " + user);
             processRequest(request, response,"Sesion activa para: " + user);

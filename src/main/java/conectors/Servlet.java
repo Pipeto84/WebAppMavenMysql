@@ -59,11 +59,12 @@ public class Servlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String name = request.getParameter("name");
-        String email = request.getParameter("email");
+        String user = request.getParameter("name");
+        String pass = request.getParameter("email");
         String[] args = new String[2];
-        args[0] = name;
-        args[1] = email;
+        args[0] = user;
+        args[1] = pass;
+        System.out.println(user+ ": "+ pass);
         JDBCmysql.main(args);
         processRequest(request, response);
     }
