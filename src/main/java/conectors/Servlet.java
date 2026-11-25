@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+
 /**
  *
  * @author felipe
@@ -38,6 +39,9 @@ public class Servlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Se guardo correctamente " + request.getContextPath() + "</h1>");
+            out.println("<a href='http://localhost:8080/WebAppMaven/'>");
+            out.println("<button>Volver</button>");
+            out.println("</a>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -60,6 +64,7 @@ public class Servlet extends HttpServlet {
         String[] args = new String[2];
         args[0] = user;
         args[1] = pass;
+        System.out.println(user+ ": "+ pass);
         JDBCmysql.main(args);
         processRequest(request, response);
     }
@@ -75,7 +80,8 @@ public class Servlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        
     }
 
     /**

@@ -20,8 +20,6 @@ public class JDBCmysql {
         Connection conexion;
         Statement statement;
 //        ResultSet rs;
-        System.out.println(args[0]+args[1]);
-        System.out.println("insert into users(nameuser, emailuser) value('"+ name +"', '"+ email + "')");
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
