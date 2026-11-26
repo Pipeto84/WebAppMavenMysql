@@ -12,6 +12,14 @@
         <servlet-name>ProfileServlet</servlet-name>
         <servlet-class>conectors.ProfileServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>com.mycompany.servlet.UserServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UseServlet</servlet-name>
+        <servlet-class>conectors.UseServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Servlet</servlet-name>
         <url-pattern>/Servlet</url-pattern>
@@ -23,6 +31,14 @@
     <servlet-mapping>
         <servlet-name>ProfileServlet</servlet-name>
         <url-pattern>/ProfileServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/UserServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UseServlet</servlet-name>
+        <url-pattern>/UseServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
