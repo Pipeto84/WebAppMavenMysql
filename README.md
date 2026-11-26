@@ -1,1 +1,3 @@
-Es un proyecto en Web App Maven con JDBC a MySQL creado en NetBeans
+Proyecto Web App Maven creado en NetBeans.
+Base de datos MySQL.
+Tiene JDBC, Hibernate, HTTP Session.
