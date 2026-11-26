@@ -38,7 +38,7 @@ public class Servlet extends HttpServlet {
             out.println("<title>Servlet Servlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Se guardo correctamente " + request.getContextPath() + "</h1>");
+            out.println("<h1>Se guardo correctamente </h1>");
             out.println("<a href='http://localhost:8080/WebAppMaven/'>");
             out.println("<button>Volver</button>");
             out.println("</a>");

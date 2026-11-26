@@ -14,11 +14,13 @@ import jakarta.persistence.EntityManager;
 
 import com.mycompany.model.User;
 import com.mycompany.config.Conexion;
+import jakarta.servlet.annotation.WebServlet;
 
 /**
  *
  * @author felipe
  */
+@WebServlet("/save")
 public class UseServlet extends HttpServlet {
 
     /**
@@ -41,7 +43,7 @@ public class UseServlet extends HttpServlet {
             out.println("<title>Servlet UseServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Usuario registrado correctamente" + request.getContextPath() + "</h1>");
+            out.println("<h1>Usuario registrado correctamente</h1>");
             out.println("<a href='http://localhost:8080/WebAppMaven/'>");
             out.println("<button>Volver</button>");
             out.println("</a>");out.println("</body>");
@@ -82,21 +84,15 @@ public class UseServlet extends HttpServlet {
         user.setUsername(nombre);
         user.setUseremail(email);
         
-        EntityManager em = Conexion.getEntityManagerFactory().createEntityManager();
-        
-        try {
+        try (EntityManager em = Conexion.getEntityManagerFactory().createEntityManager()) {
             em.getTransaction().begin();
             em.persist(user);
             em.getTransaction().commit();
             processRequest(request, response);
-        } catch (Exception e) {
-            if (em.getTransaction().isActive()) {
-                em.getTransaction().rollback();
-            }
+        } catch (ServletException | IOException e) {
+//            
 
             throw new ServletException(e);
-        } finally{
-            em.close();
         }
         
     }

@@ -38,7 +38,7 @@ public class LoginServlet extends HttpServlet {
             out.println("<title>Servlet LoginServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet LoginServlet at </h1>");
 //            out.println("<a href='http://localhost:8080/WebAppMaven/profile'>");
 //            out.println("<button>Volver</button>");
 //            out.println("</a>");
