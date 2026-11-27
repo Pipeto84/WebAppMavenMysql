@@ -18,7 +18,7 @@
     </servlet>
     <servlet>
         <servlet-name>UseServlet</servlet-name>
-        <servlet-class>conectors.UseServlet</servlet-class>
+        <servlet-class>conectors.UserServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Servlet</servlet-name>

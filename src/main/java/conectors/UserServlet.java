@@ -6,6 +6,7 @@ package conectors;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -13,15 +14,17 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.persistence.EntityManager;
 
 import com.mycompany.model.User;
+//import com.mycompany.dao.UserDAO;
+import com.mycompany.config.HibernateUtil;
 import com.mycompany.config.Conexion;
-import jakarta.servlet.annotation.WebServlet;
+import org.hibernate.Session;
 
 /**
  *
  * @author felipe
  */
 @WebServlet("/save")
-public class UseServlet extends HttpServlet {
+public class UserServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -77,24 +80,18 @@ public class UseServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String nombre = request.getParameter("name");
+        
+        String name = request.getParameter("name");
         String email = request.getParameter("email");
-
-        User user = new User(nombre, email);
-        user.setUsername(nombre);
-        user.setUseremail(email);
         
-        try (EntityManager em = Conexion.getEntityManagerFactory().createEntityManager()) {
-            em.getTransaction().begin();
-            em.persist(user);
-            em.getTransaction().commit();
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            session.beginTransaction();
+            User user = new User(name, email);
+            session.persist(user);
+            session.getTransaction().commit();
+//            session.close();
             processRequest(request, response);
-        } catch (ServletException | IOException e) {
-//            
-
-            throw new ServletException(e);
         }
-        
     }
 
     /**
