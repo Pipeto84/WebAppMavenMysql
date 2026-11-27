@@ -47,7 +47,8 @@ public class UserServlet extends HttpServlet {
             out.println("<h1>Usuario registrado correctamente</h1>");
             out.println("<a href='http://localhost:8080/WebAppMaven/'>");
             out.println("<button>Volver</button>");
-            out.println("</a>");out.println("</body>");
+            out.println("</a>");
+            out.println("</body>");
             out.println("</html>");
         }
     }

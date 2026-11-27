@@ -30,6 +30,12 @@
             <input type="submit" value="Enviar" />
             <br><br>
         </form>
-        
+        <form action="get" name="Ingreso" method="get">
+            <h1>Buscar usuario</h1>
+            Id <input type="number" name="id" value="" />
+            <br><br>
+            <input type="submit" value="Buscar" />
+            <br><br>
+        </form>
     </body>
 </html>

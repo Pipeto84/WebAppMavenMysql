@@ -20,6 +20,10 @@
         <servlet-name>UseServlet</servlet-name>
         <servlet-class>conectors.UserServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetUser</servlet-name>
+        <servlet-class>conectors.GetUser</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Servlet</servlet-name>
         <url-pattern>/Servlet</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>UseServlet</servlet-name>
         <url-pattern>/UseServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetUser</servlet-name>
+        <url-pattern>/GetUser</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
