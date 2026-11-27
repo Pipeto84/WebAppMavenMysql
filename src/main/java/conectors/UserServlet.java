@@ -87,7 +87,7 @@ public class UserServlet extends HttpServlet {
             User user = new User(name, email);
             session.persist(user);
             session.getTransaction().commit();
-//            session.close();
+            session.close();
             processRequest(request, response);
         }
     }
