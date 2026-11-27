@@ -13,8 +13,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import com.mycompany.model.User;
-//import com.mycompany.dao.UserDAO;
 import com.mycompany.config.HibernateUtil;
+//import com.mycompany.config.Conexion;
 import org.hibernate.Session;
 
 /**
